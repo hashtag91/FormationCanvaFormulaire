@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Mali-Developpeur">
+    <meta name="keywords" content="mali developpeur">
+
+    <!-- Title Page-->
+    <title>Canva Formation</title>
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Main CSS-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" />
+    <link href="{{url_for('static',filename='css/found_style.css')}}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div style="display: flex; align-items: center; background-color: #fff;padding: 0;">
+        <img src="{{url_for('static',filename='img/logo.png')}}" alt="" width="40px" height="40px">
+        <h4>Mali Developpeur</h4>
+    </div>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <div class="user-icon-div">
+                        <span class="material-symbols-outlined">
+                            account_circle
+                        </span>
+                    </div>
+                    <h3 class="title">{{firstname}} {{lastname}}</h3>
+                    <div class="input-group">
+                        <label class="label">N° unique</label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <input class="input--style-4" type="text" name="association" placeholder="Le nom de votre association" id="association" value="{{num_unique}}" readonly>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">Prénom</label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <input class="input--style-4" type="text" name="association" placeholder="Le nom de votre association" id="association" value="{{firstname}}" readonly>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">Nom</label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <input class="input--style-4" type="text" name="association" placeholder="Le nom de votre association" id="association" value="{{lastname}}" readonly>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">Date de naissance</label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <input class="input--style-4" type="text" name="association" placeholder="Le nom de votre association" id="association" value="{{birth}}" readonly>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">Association</label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <input class="input--style-4" type="text" name="association" placeholder="Le nom de votre association" id="association" value="{{association}}" readonly>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">Aujourd'hui</label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <input class="input--style-4" type="text" name="date_jour" placeholder="Le nom de votre association" id="date_jour" value="{{date_jour}}" readonly>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">Présence</label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            {% if status == "presente" %}
+                                <input class="input--style-4" type="text" name="presence" placeholder="Le nom de votre association" id="presence" value="{{status}}" readonly style="color: green">
+                            {% else %}
+                                <input class="input--style-4" type="text" name="presence" placeholder="Le nom de votre association" id="presence" value="{{status}}" readonly style="color: red">
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% if status == "absente" %}
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <a href="{{url_for('presence',unique=num_unique)}}" style="text-decoration: none;"><button type="button" style="width: 150px; height: 40px; border-radius: 10px; background-color: rgb(0, 115, 247); color: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.5);">Presente</button></a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        </br>
+        </br>
+    </div>
+    
+</body>
+
+</html>

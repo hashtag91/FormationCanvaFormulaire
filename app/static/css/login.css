@@ -1,0 +1,71 @@
+/* Reset some default browser styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make the body take the full height of the screen */
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+#login{
+    height: 100%;
+    border-radius: 20px;
+    border-radius: 10px;
+}
+#logo,#form{
+    background-color: rgb(31, 65, 65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+#form{
+    background-color: #fff;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+#logo{
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+#form div{
+    width: 100%;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    background-color: #de7d0f;
+    color: #fff;
+    cursor: pointer;
+}
+button:hover{
+    background-color:#f7890a;
+    color: black;
+}
